@@ -25,7 +25,7 @@ flutter --version
 1. Clona el repositorio (o sitúate en la carpeta del proyecto si ya la tienes):
 
 ```bash
-git clone <url-del-repo>
+git clone https://github.com/ssannad862/gamevault
 cd gamevault
 ```
 

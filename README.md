@@ -1,43 +1,62 @@
 # GameVault
 
-GameVault
+GameVault es una aplicación de demostración hecha con Flutter para organizar y visualizar una pequeña colección de videojuegos. Esta versión contiene una UI con pestañas (Juegos, Favoritos, Categorías), un formulario para añadir juegos y una pantalla de Ajustes.
 
-## Descripción
+## Descripción breve
 
-GameVault es una app de gestión de videojuegos que busca enseñar a organizar código y crear widgets reutilizables para la interfaz.
-
-## Tecnologías
-
-- Flutter (Dart)
+Una app educativa para practicar widgets de Flutter y el uso de `SharedPreferences` para guardar ajustes locales.
 
 ## Requisitos
 
-- Tener instalado Flutter. Verifica con:
+- Flutter instalado y configurado. Verifica con:
 
 ```bash
 flutter --version
 ```
 
-- Un dispositivo/emulador conectado o seleccionar un target de escritorio/web.
+- Un emulador o dispositivo conectado (Android, iOS, Web o Desktop)
 
-## Instalación rápida
+## Instalación y ejecución
 
-1. Clona el repositorio (o sitúate en la carpeta del proyecto si ya la tienes):
+1. Clona o descarga el repositorio y muévete a la carpeta del proyecto:
 
 ```bash
 git clone https://github.com/ssannad862/gamevault
-cd gamevault
+cd gamevaultN
 ```
 
-2. Recupera dependencias:
+2. Recupera las dependencias:
 
 ```bash
 flutter pub get
 ```
 
-3. Ejecuta la app en el dispositivo elegido:
+3. Ejecuta la app:
 
 ```bash
 flutter run
-
 ```
+
+Para ejecutar en web (ej. Chrome):
+
+```bash
+flutter run -d chrome
+```
+
+---
+
+## ¿Qué ajustes se guardan?
+
+La app utiliza `SharedPreferences` a través de `lib/services/settings_service.dart`. Actualmente se guardan los siguientes ajustes:
+
+- `darkMode` (bool): Tema oscuro; valor por defecto: `false`.
+- `username` (String): Nombre de usuario; valor por defecto: `''` (cadena vacía).
+- `preferredPlatform` (String): Plataforma preferida (ej. `PC`, `PS5`, `Switch`); valor por defecto: `PC`.
+
+Cómo probarlo:
+
+1. Abre el Drawer y entra en Ajustes.
+2. Activa/desactiva el Tema oscuro, cambia el nombre y selecciona una plataforma.
+3. Cierra y vuelve a abrir la app; los ajustes se conservan automáticamente.
+
+Los métodos relevantes para persistir estos ajustes son `SettingsService.setDarkMode`, `SettingsService.setUsername` y `SettingsService.setPreferredPlatform`.
